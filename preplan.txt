@@ -1,0 +1,7 @@
+
+BD gry
+
+int id 
+varchar nazwa
+varchar wydawca
+decimal(5,2) cena 

@@ -1,0 +1,22 @@
+:root {
+    --clr-text-secondary: #fff;
+    --clr-text-primary: #000;
+    --clr-errBg: #cf1a1a;
+}
+
+.container {
+    height: 100vh;
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#errorCode {
+    padding: 1rem;
+    background-color: var(--clr-errBg);
+    border-radius: 1rem;
+    color: var(--clr-text-secondary);
+}

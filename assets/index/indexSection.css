@@ -1,0 +1,9 @@
+:root {
+    --clr-section-bg: #4e3f3f;
+}
+
+#sectionContainer {
+    flex: 70%;
+    flex-grow: 1;
+    background-color: var(--clr-section-bg);
+}

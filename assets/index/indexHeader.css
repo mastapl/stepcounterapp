@@ -1,0 +1,17 @@
+:root {
+    --clr-header-bg: #ff8e8e;
+}
+
+#headerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: var(--clr-header-bg);
+}
+
+#headerContainer #logo {
+    padding: 1rem;
+    width: 200px;
+    aspect-ratio: 408/180;
+}

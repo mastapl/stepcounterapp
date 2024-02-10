@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title> 
+    <link rel="stylesheet" href="/adminPanel.css" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <header class="header-main">
+            <div class="header__first-section">
+                <a href="./accounts?admin=true123">Konta</a>
+                <a href="./steps?admin=true123" class="active">Kroki</a>
+                <a href="./stepsthresholds?admin=true123">Progi kroków</a>
+            </div>
+            <div class="header__second-section">
+                <h1>Admin Panel</h1>
+            </div>
+        </header>
+        <form class="form" method="POST">
+            <input type="text" placeholder="ID" name="user_id" required="true">
+            <input type="text" placeholder="Kroki" name="steps" required="true">
+            <input type="text" placeholder="Data -> rrrr-mm-dd" name="date" required="true">
+            <button type="submit">Wyślij</button>
+        </form>
+        <div class="dataList" id="stepsDataList">
+            <div class="row">
+                <div class="data">ID</div>
+                <div class="data">Kroki</div>
+                <div class="data">Data</div>
+                <div class="data">Operacje</div>
+            </div>
+                <% if(data.length > 0) {%>
+                    <% for(var i = 0 ; i <data.length ; i++){%>
+                <div class="row">
+                    <div class="data"><%= data[i].user_id%></div>
+                    <div class="data"><%= data[i].steps%></div>
+                    <div class="data"><%= data[i].date%></div>
+                    <div class="operations">
+                        <button class="updateButton"><a href=""></a>Update</button>
+                        <a href="./stepsdelete?user_id=<%=data[i].user_id%>&date=<%=data[i].date%>"><button class="deleteButton">Delete</button></a>
+                    </div>
+                </div>
+            <% } %>
+                    <% } else { %>
+                        <div class="notFound">
+                            <h1>Nie znaleziono danych</h1>
+                        </div>
+                    <% } %>
+        </div>
+    </div>
+</body>
+</html>

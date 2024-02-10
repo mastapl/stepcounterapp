@@ -1,0 +1,9 @@
+:root {
+    --clr-nav-bg: #b9a2a2;
+}
+
+#navContainer {
+    flex: 30%;
+    height: 100%;
+    background: var(--clr-nav-bg);
+}
