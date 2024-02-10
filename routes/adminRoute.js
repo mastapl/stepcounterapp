@@ -125,6 +125,7 @@ router.get("/getthresholds",auth,(req,res)=>{
     var sql = `SELECT kroki FROM progi ORDER BY kroki ASC`;
     conn.query(sql,(err,results)=>{
         if(err) throw err;
+        console.log("pozyskano liste progow");
         res.json(results);
     })
 });
