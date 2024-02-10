@@ -121,6 +121,14 @@ router.get("/thresholddelete",(req,res)=>{
     });
 });
 
+router.get("/getthresholds",auth,(req,res)=>{
+    var sql = `SELECT kroki FROM progi ORDER BY kroki ASC`;
+    conn.query(sql,(err,results)=>{
+        if(err) throw err;
+        res.json(results);
+    })
+});
+
 router.get("/getData",(req,res) => {
     const login = req.query.login // query dla GET , body dla POST zebym pamietal
     const password = req.query.password
@@ -177,7 +185,7 @@ router.post("/validatelogin",(req,res) => {
 });
 
 router.post("/uploaddata",(req,res) => {
-    var stepCount = parseInt(req.body.stepCount); //Z aplikacji jest wysyłany String
+    var stepCount = parseInt(req.body.stepCount);
     var login = req.body.login;
     var password = req.body.password;
     getIdSql = `SELECT id FROM konta WHERE login="${login}" AND password="${password}"`;
